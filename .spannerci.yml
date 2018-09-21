@@ -1,18 +1,18 @@
 # code_qa:
 #     type: basic
 
-# build_binary:
-#     type: 'particle photon'
-#     source_dir: 'app'
-#     build_command: make
-#     binary_name: my_binary
-#     pre_flight:
-#     post_flight:
-#     on_failure:
-#     on_success:
+build_binary:
+    type: 'particle photon'
+    source_dir: 'app'
+    build_command: make
+    binary_name: my_binary
+    pre_flight:
+    post_flight:
+    on_failure:
+    on_success:
 
-testing:
-    source_dir: 'Scenario.py'    
+# testing:
+#     source_dir: 'Scenario.py'    
 #     binary_update:
 #         platform: 'particle photon'
 #         binary: auto

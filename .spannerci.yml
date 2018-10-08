@@ -16,5 +16,5 @@ testing:
     binary_update:
         platform: 'particle photon'
         #binary: auto
-        binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
-        #binary: binary/mike_binary.bin
+        #binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
+        binary: binary/mike_binary.bin

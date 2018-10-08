@@ -11,7 +11,7 @@ build_binary:
     on_failure:
     on_success:
 
- testing:
+testing:
     source_dir: 'Scenario.py'    
     binary_update:
         platform: 'particle photon'

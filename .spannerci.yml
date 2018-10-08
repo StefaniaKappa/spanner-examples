@@ -4,7 +4,7 @@
 build_binary:
     type: 'particle photon'
     source_dir: 'app'
-    build_command: make clean && make
+    build_command: make
     binary_name: my_binary
     pre_flight:
     post_flight:

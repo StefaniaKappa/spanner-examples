@@ -9,7 +9,6 @@ import Device
 
 
 device = Device.Particle("FirstDev")
-
 testboard = Testboard("Tester2")
 
 
@@ -20,30 +19,21 @@ testboard = Testboard("Tester2")
 
 # powered, when LOW, the device will shut down
 
-OUTPUT_PIN = "D3"
-
+OUTPUT_PIN = "D7"
 
 
 def measure_power_consumption():
 
-
-
     # Turn the device off
-
     testboard.digitalWrite(OUTPUT_PIN, "LOW");
-
-
 
     # Wait for a while for it to shut down
 
     time.sleep(2)
 
-
-
     # Turn the device back on
 
     testboard.digitalWrite(OUTPUT_PIN, "HIGH");
-
 
 
     # The device runs some initialization actions in the beginning, which are
@@ -52,33 +42,33 @@ def measure_power_consumption():
 
     # while for the initial conditions to pass
 
-#     time.sleep(5)
+    #     time.sleep(5)
 
 
 
     # Start measuring power consumption
 
-#     testboard.startPowerMeasurement()
+    #     testboard.startPowerMeasurement()
 
-    
+
 
     # Measure for 5 minutes
 
-#     time.sleep(10)
+    #     time.sleep(10)
 
 
 
     # Stop measuring power consumption
 
-#     testboard.stopPowerMeasurement()
+    #     testboard.stopPowerMeasurement()
 
-    
 
-#     res = testboard.measuredPowerConsumption()
 
-#     print('res')
+    #     res = testboard.measuredPowerConsumption()
 
-#     print(str(res))
+    #     print('res')
+
+    #     print(str(res))
 
     # Make sure the total power consumption didn't exceed 100mAh. The
 
@@ -88,7 +78,7 @@ def measure_power_consumption():
 
     # function to assert that this is less than the target value of 100.
 
-    spanner.assertLessThan(100, 20)
+    #spanner.assertLessThan(100, 20)
 
 
 

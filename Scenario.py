@@ -1,9 +1,7 @@
 import time
 
 from Spanner import Spanner
-
 from Testboard import Testboard
-
 import Device
 
 

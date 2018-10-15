@@ -10,7 +10,7 @@ import Device
 
 device = Device.Particle("FirstDev")
 
-testboard = Testboard("Wubby_Test")
+testboard = Testboard("Tester2")
 
 
 

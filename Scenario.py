@@ -22,7 +22,7 @@ import time
 from Spanner import Spanner
 from Testboard import Testboard
 
-testboard = Testboard("testboard_name")
+testboard = Testboard("Tester2")
 
 #
 # Setup the serial interface

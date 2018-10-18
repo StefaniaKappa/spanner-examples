@@ -64,7 +64,7 @@ def validate_serial_TX_data():
 # Validate device TX by writing one byte from device to testboard and echoing
 # back the data to the device.
 #
-def validate_serial_TX_echo_back()
+def validate_serial_TX_echo_back():
     # Read one byte from testboard's serial
     value = testboard.serialReadByte()
 

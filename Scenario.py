@@ -21,7 +21,7 @@
 import time
 from Spanner import Spanner
 from Testboard import Testboard
-from Testboard.Serial import Serial
+from Testboard import Serial
 
 testboard = Testboard("Tester2")
 

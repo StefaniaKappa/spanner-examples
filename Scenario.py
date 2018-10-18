@@ -21,6 +21,7 @@
 import time
 from Spanner import Spanner
 from Testboard import Testboard
+from Testboard.Serial import Serial
 
 testboard = Testboard("Tester2")
 
@@ -31,7 +32,7 @@ def serial_config():
 
     # Configure serial interface (baudrate and config, where config: 
     # data bits | stop bits | parity | hw flow control | LIN configuration
-    testboard.serialSetup(9600, SERIAL_DATA_BITS_8 | SERIAL_STOP_BITS_1 | SERIAL_PARITY_NO)
+    testboard.serialSetup(9600, Serial.DATA_BITS_8 | Serial.STOP_BITS_1 | Serial.PARITY_NO)
 
 #
 # Validate device TX by writing one byte from device to testboard
@@ -50,8 +51,9 @@ def validate_serial_TX_byte():
 def validate_serial_TX_data():
 
     data_length = testboard.serialAvailable()
-    spanner.assertTrue(data_length)
-
+    spanner.assertTrue(data_length > 0)
+    bytes = ''
+    
     # Read the requested bytes from testboard's serial
     while (data_length != 0):
         bytes += testboard.serialReadByte()

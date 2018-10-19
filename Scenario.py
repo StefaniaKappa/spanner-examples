@@ -1,7 +1,7 @@
-# This example will test our Product's serial interface 
+# This example will test our Product's serial interface
 #
 # The goal of this example is to show you how you can read and write data from/to
-# your device using the serial interface, and how you can assert string and byte 
+# your device using the serial interface, and how you can assert string and byte
 # values.
 #
 # If you want to replicate this setup, serial interface is available via the
@@ -21,29 +21,19 @@
 import time
 from Spanner import Spanner
 from Testboard import Testboard
-from Testboard import Serial
 
 testboard = Testboard("Tester2")
 
+
 #
 # Setup the serial interface
-# 
+#
 def serial_config():
-
-    # Configure serial interface (baudrate and config, where config: 
+    Serial = Testboard.Serial
+    # Configure serial interface (baudrate and config, where config:
     # data bits | stop bits | parity | hw flow control | LIN configuration
     testboard.serialSetup(9600, Serial.DATA_BITS_8 | Serial.STOP_BITS_1 | Serial.PARITY_NO)
 
-#
-# Validate device TX by writing one byte from device to testboard
-#
-def validate_serial_TX_byte():
-
-    # Read one byte from testboard's serial
-    value = testboard.serialReadByte()
-
-    # Check if we received the requested byte in the testboard
-    spanner.assertEqual(b'\x31', value)
 
 #
 # Validate device TX by writing a series of bytes from device to testboard
@@ -51,16 +41,22 @@ def validate_serial_TX_byte():
 def validate_serial_TX_data():
 
     data_length = testboard.serialAvailable()
-    spanner.assertTrue(data_length > 0)
+    # wait for byte
+    while data_length < 1:
+        time.sleep(2)
+
     bytes = ''
-    
     # Read the requested bytes from testboard's serial
-    while (data_length != 0):
+    while data_length != 0:
         bytes += testboard.serialReadByte()
         data_length -= 1
 
     # Check if we received the requested bytes in testboard
-    spanner.assertEqual("hello", bytes)
+    spanner.assertEqual("Hello Testboard\n", bytes)
+
+    # Send to device
+    testboard.serialWrite("Hello device\n")
+
 
 #
 # Validate device TX by writing one byte from device to testboard and echoing
@@ -81,8 +77,6 @@ if __name__ == "__main__":
 
     serial_config()
 
-    validate_serial_TX_byte()
-
     time.sleep(2)
 
     validate_serial_TX_data()
@@ -90,4 +84,4 @@ if __name__ == "__main__":
     time.sleep(2)
 
     validate_serial_TX_echo_back()
-    
+

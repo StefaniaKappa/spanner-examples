@@ -40,16 +40,19 @@ def serial_config():
 #
 def validate_serial_TX_data():
 
-    data_length = testboard.serialAvailable()
-    # wait for byte
-    while data_length < 1:
-        time.sleep(2)
-
     bytes = ''
-    # Read the requested bytes from testboard's serial
-    while data_length != 0:
-        bytes += testboard.serialReadByte()
-        data_length -= 1
+    end_of_buff = False
+
+    while not end_of_buff:
+        data_length = testboard.serialAvailable()
+        time.sleep(2)
+        # Read the requested bytes from testboard's serial
+        while data_length != 0:
+            bytes += testboard.serialReadByte()
+            data_length -= 1
+            if bytes[-1] == '\n':
+                end_of_buff = True
+                break
 
     # Check if we received the requested bytes in testboard
     spanner.assertEqual("Hello Testboard\n", bytes)

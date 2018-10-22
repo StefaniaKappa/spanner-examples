@@ -40,22 +40,30 @@ def serial_config():
 #
 def validate_serial_TX_data():
 
-    bytes = ''
+    buffer = ''
     end_of_buff = False
+
+    spanner.assertEqual("Hello Testboard\n", "Hello Testboard\n")
+
+    print("Waiting for handshake")
 
     while not end_of_buff:
         data_length = testboard.serialAvailable()
-        time.sleep(2)
+        print("Available chars: " + str(data_length))
+
         # Read the requested bytes from testboard's serial
-        while data_length != 0:
-            bytes += testboard.serialReadByte()
+        while data_length > 0:
+            new_char = testboard.serialReadByte().decode('ascii')
+            buffer += new_char
             data_length -= 1
-            if bytes[-1] == '\n':
+            if new_char == '\n':
                 end_of_buff = True
                 break
 
+    print("Received Buffer " + buffer)
+
     # Check if we received the requested bytes in testboard
-    spanner.assertEqual("Hello Testboard\n", bytes)
+    spanner.assertEqual("Hello Testboard\n", buffer)
 
     # Send to device
     testboard.serialWrite("Hello device\n")

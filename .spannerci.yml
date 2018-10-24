@@ -12,7 +12,7 @@
 #     on_success:
 
 testing:
-            source_dir: 'Scenario.py'    
+    source_dir: 'Scenario.py'    
     binary_update:
         devices: 
             - ENV_DEVICE_1

@@ -15,8 +15,7 @@ testing:
     source_dir: 'Scenario.py'    
     variables:
         AWS_ACCESS_KEY_ID: 'aws_access_key_id'
-        AWS_SECRET_ACCESS_KEY: memas
-        AWS_SECRET_ACCESS_KEY: Not unique
+        AWS_SECRET_ACCESS_KEY: 1
     binary_update:
         devices: 
             - ENV_DEVICE_1

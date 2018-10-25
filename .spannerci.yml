@@ -1,15 +1,18 @@
 # code_qa:
 #     type: basic
 
-# build_binary:
-#     type: 'particle photon'
-#     source_dir: 'app'
-#     build_command: make
-#     binary_name: my_binary
-#     pre_flight:
-#     post_flight:
-#     on_failure:
-#     on_success:
+build_binary:
+    type: 'particle photon'
+    source_dir: 'app'
+    build_command: make
+    env_vars:
+        - $TEST
+        - $MAGKAS
+    binary_name: my_binary
+    pre_flight:
+    post_flight:
+    on_failure:
+    on_success:
 
 testing:
     source_dir: 'Scenario.py'    
@@ -18,8 +21,10 @@ testing:
         AWS_SECRET_ACCESS_KEY: 1
     binary_update:
         devices: 
-            - ENV_DEVICE_1
-            - ENV_DEVICE_2
+            - $DEVICE_1
+            - $DEVICE_1
+            - memas
+            - $DEVICE_2
         platform: 'particle photon'
         #binary: auto
         binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l

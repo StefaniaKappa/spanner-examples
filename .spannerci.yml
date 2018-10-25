@@ -9,10 +9,6 @@ build_binary:
         - $TEST
         - $MAGKAS
     binary_name: my_binary
-    pre_flight:
-    post_flight:
-    on_failure:
-    on_success:
 
 testing:
     source_dir: 'Scenario.py'    

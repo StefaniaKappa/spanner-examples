@@ -11,16 +11,13 @@ build_binary:
     binary_name: my_binary
 
 testing:
-    source_dir: 'Scenario.py'    
-    variables:
-        AWS_ACCESS_KEY_ID: 'aws_access_key_id'
-        AWS_SECRET_ACCESS_KEY: 1
-    binary_update:
-        devices: 
-            - DEVICE_1
-            - $DEVICE_1
-            - $DEVICE_2
-        platform: 'particle photon'
-        #binary: auto
-        binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
-        #binary: binary/mike_binary.bin
+    source_dir: 'Scenario.py'
+#     binary_update:
+#         devices: 
+#             - DEVICE_1
+#             - $DEVICE_1
+#             - $DEVICE_2
+#         platform: 'particle photon'
+#         #binary: auto
+#         binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
+#         #binary: binary/mike_binary.bin

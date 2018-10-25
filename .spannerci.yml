@@ -17,7 +17,7 @@ testing:
         AWS_SECRET_ACCESS_KEY: 1
     binary_update:
         devices: 
-            - $DEVICE_1
+            - DEVICE_1
             - $DEVICE_1
             - $DEVICE_2
         platform: 'particle photon'

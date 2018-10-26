@@ -12,11 +12,15 @@ build_binary:
 
 testing:
     source_dir: 'Scenario.py'
+    env_vars: 
+        - $Whatever_123
+        - $_xyz
     binary_update:
          devices: 
-             - DEVICE_1
-             - $DEVICE_1
-             - $DEVICE_2
+            - $DEVI1
+            - $DEV2
+         env_vars: 
+            - $TOKEN
          platform: 'particle photon'
          #binary: auto
          binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l

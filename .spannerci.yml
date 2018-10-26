@@ -8,7 +8,6 @@ build_binary:
     env_vars:
         - $TEST
         - $TEST
-        - $MAGKAS
     binary_name: my_binary
 
 testing:

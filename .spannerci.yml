@@ -16,10 +16,10 @@ testing:
         - $Whatever_123
         - $_xyz
     binary_update:
-         devices: 
+         devices:
             - $DEVI1
             - $DEV2
-         env_vars: 
+         env_vars:
             - $TOKEN
          platform: 'particle photon'
          #binary: auto

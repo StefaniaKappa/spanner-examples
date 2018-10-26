@@ -5,20 +5,13 @@ build_binary:
     type: 'particle photon'
     source_dir: 'app'
     build_command: make
-    env_vars:
-        - $TEST
-        - $TEST
     binary_name: my_binary
 
 testing:
     source_dir: 'Scenario.py'
-    env_vars: 
-        - $Whatever_123
-        - $_xyz
     binary_update:
          devices:
-            - $DEVI1
-            - $DEV2
+            - $Memas
          env_vars:
             - $TOKEN
          platform: 'particle photon'

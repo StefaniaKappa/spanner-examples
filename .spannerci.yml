@@ -7,6 +7,7 @@ build_binary:
     build_command: make
     env_vars:
         - $TEST
+        - $TEST
         - $MAGKAS
     binary_name: my_binary
 

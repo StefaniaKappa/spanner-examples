@@ -6,7 +6,8 @@ build_binary:
     source_dir: 'app'
     build_command: make
     binary_name: my_binary
-
+    env_vars:
+        - $TOKEN
 testing:
     source_dir: 'Scenario.py'
     binary_update:

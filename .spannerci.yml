@@ -17,7 +17,7 @@ testing:
     source_dir: 'Scenario.py'
     binary_update:
          devices:
-            - $Memas
+            - $paticle_dev1
          env_vars:
             - $SPN_PARTICLE_ACCESS
          platform: 'particle photon'

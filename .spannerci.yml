@@ -1,17 +1,17 @@
 # code_qa:
 #     type: basic
 
-build_binary:
-    type: 'aws esp32'
-    source_dir: 'app'
-    binary_name: my_binary
-    env_vars:
-        - $SPN_AWS_ACCESS_KEY_ID
-        - $SPN_AWS_SECRET_ACCESS_KEY
-        - $SPN_ESP32_THING_NAME
-        - $SPN_ESP32_WIFI_SSID
-        - $SPN_ESP32_WIFI_PASSWORD
-        - $SPN_ESP32_WIFI_SECURITY
+# build_binary:
+#     type: 'aws esp32'
+#     source_dir: 'app'
+#     binary_name: my_binary
+#     env_vars:
+#         - $SPN_AWS_ACCESS_KEY_ID
+#         - $SPN_AWS_SECRET_ACCESS_KEY
+#         - $SPN_ESP32_THING_NAME
+#         - $SPN_ESP32_WIFI_SSID
+#         - $SPN_ESP32_WIFI_PASSWORD
+#         - $SPN_ESP32_WIFI_SECURITY
 testing:
     source_dir: 'Scenario.py'
     binary_update:

@@ -14,11 +14,11 @@
 #         - $SPN_ESP32_WIFI_SECURITY
 testing:
     source_dir: 'Scenario.py'
+    env_vars:
+        - $SPN_PARTICLE_TOKEN
     binary_update:
          devices:
-            - $paticle_dev1
-         env_vars:
-            - $SPN_PARTICLE_TOKEN
+            - $paticle_dev1            
          platform: 'particle photon'
          #binary: auto
          binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l

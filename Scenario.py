@@ -22,7 +22,7 @@ import time
 from Spanner import Spanner
 from Testboard import Testboard
 
-testboard = Testboard("Tester2")
+testboard = Testboard("Tester1")
 
 
 #

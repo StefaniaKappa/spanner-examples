@@ -7,7 +7,6 @@ build_binary:
     build_command: make
     binary_name: my_binary
     env_vars:
-        - $TOKEN
         - $SPN_AWS_ACCESS_KEY_ID
         - $SPN_AWS_SECRET_ACCESS_KEY
         - $SPN_ESP32_THING_NAME
@@ -20,7 +19,7 @@ testing:
          devices:
             - $Memas
          env_vars:
-            - $TOKEN
+            - $SPN_PARTICLE_ACCESS
          platform: 'particle photon'
          #binary: auto
          binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l

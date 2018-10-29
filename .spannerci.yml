@@ -2,7 +2,7 @@
 #     type: basic
 
 build_binary:
-    type: 'aws esp32'
+    type: 'particle photon'
     source_dir: 'app'
     build_command: make
     binary_name: my_binary

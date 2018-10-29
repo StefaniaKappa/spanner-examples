@@ -18,7 +18,7 @@ testing:
          devices:
             - $paticle_dev1
          env_vars:
-            - $SPN_PARTICLE_ACCESS
+            - $SPN_PARTICLE_TOKEN
          platform: 'particle photon'
          #binary: auto
          binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l

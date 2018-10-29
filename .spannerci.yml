@@ -1,25 +1,44 @@
-# code_qa:
-#     type: basic
+# # code_qa:
+# #     type: basic
 
-# build_binary:
-#     type: 'aws esp32'
-#     source_dir: 'app'
-#     binary_name: my_binary
+# # build_binary:
+# #     type: 'aws esp32'
+# #     source_dir: 'app'
+# #     binary_name: my_binary
+# #     env_vars:
+# #         - $SPN_AWS_ACCESS_KEY_ID
+# #         - $SPN_AWS_SECRET_ACCESS_KEY
+# #         - $SPN_ESP32_THING_NAME
+# #         - $SPN_ESP32_WIFI_SSID
+# #         - $SPN_ESP32_WIFI_PASSWORD
+# #         - $SPN_ESP32_WIFI_SECURITY
+# testing:
+#     source_dir: 'Scenario.py'
 #     env_vars:
-#         - $SPN_AWS_ACCESS_KEY_ID
-#         - $SPN_AWS_SECRET_ACCESS_KEY
-#         - $SPN_ESP32_THING_NAME
-#         - $SPN_ESP32_WIFI_SSID
-#         - $SPN_ESP32_WIFI_PASSWORD
-#         - $SPN_ESP32_WIFI_SECURITY
+#         - $SPN_PARTICLE_TOKEN
+#     binary_update:
+#          devices:
+#             - $DEVICE_1    
+#          platform: 'particle photon'
+#          #binary: auto
+#          binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
+#          #binary: binary/mike_binary.bin
+
+code_qa:
+    level: basic
+    source: firmware/
+
+build_binary:
+    builder: particle photon
+    source: firmware/
+    script: make
+
 testing:
-    source_dir: 'Scenario.py'
+    script: testing/basic-tests/GPIO/read-digital-output/scenario.py
     env_vars:
         - $SPN_PARTICLE_TOKEN
-    binary_update:
-         devices:
-            - $DEVICE_1    
-         platform: 'particle photon'
-         #binary: auto
-         binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
-         #binary: binary/mike_binary.bin
+    device_update:
+        devices:
+            - $DEVICE_1
+        ota_method: particle
+        binary: auto

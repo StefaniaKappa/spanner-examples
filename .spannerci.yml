@@ -26,11 +26,11 @@
 
 code_qa:
     level: basic
-    source: firmware/
+    source: app/
 
 build_binary:
     builder: particle photon
-    source: firmware/
+    source: app/
     script: make
 
 testing:

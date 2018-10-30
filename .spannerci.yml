@@ -29,12 +29,12 @@ build_binary:
     source: app/
     script: make
 
-testing:
-    script: examples/1. Basic Tests/GPIO/1. Set Digital Output/scenario.py
-    env_vars:
-        - $SPN_PARTICLE_TOKEN
-    device_update:
-        devices:
-            - $DEVICE_1
-        ota_method: particle
-        binary: auto
+# testing:
+#     script: examples/1. Basic Tests/GPIO/1. Set Digital Output/scenario.py
+#     env_vars:
+#         - $SPN_PARTICLE_TOKEN
+#     device_update:
+#         devices:
+#             - $DEVICE_1
+#         ota_method: particle
+#         binary: auto

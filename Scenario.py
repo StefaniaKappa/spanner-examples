@@ -16,7 +16,7 @@
 # Also note that for the serial channel configuration, it is possible to specify
 # the baud rate, the number of data bits, stop bits, parity, flow control and other
 # settings.
-#
+# xeloou dear
 
 import time
 from Spanner import Spanner

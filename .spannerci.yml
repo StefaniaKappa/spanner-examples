@@ -28,7 +28,9 @@ pre_flight:
     - echo "Hello there"
     - echo "Over"
 
-post_flight: echo 'Just me today'
+post_flight: 
+    eimai:
+        eksypnos
 
 build_binary:
     post_flight: echo 'I overide you lel :P'

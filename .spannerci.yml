@@ -28,10 +28,10 @@ pre_flight:
     - echo "Hello there"
     - echo "Over"
 
-post_flight: "Just me today"
+post_flight: echo 'Just me today'
 
 build_binary:
-    post_flight: I overide you lel :P
+    post_flight: echo 'I overide you lel :P'
     builder: particle photon
     source: app/
     script: make

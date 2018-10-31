@@ -24,7 +24,14 @@
 #          binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
 #          #binary: binary/mike_binary.bin
 
+pre_fligh:
+    - echo "Hello there"
+    - echo "Over"
+
+post_flight: "Just me today"
+
 build_binary:
+    post_flight: I overide you lel :P
     builder: particle photon
     source: app/
     script: make

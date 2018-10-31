@@ -24,7 +24,7 @@
 #          binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
 #          #binary: binary/mike_binary.bin
 
-pre_fligh:
+pre_flight:
     - echo "Hello there"
     - echo "Over"
 

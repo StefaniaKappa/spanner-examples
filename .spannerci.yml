@@ -29,14 +29,12 @@ pre_flight:
     - echo "Over"
 
 post_flight: 
-    eimai:
-        eksypnos
+    - echo "Post flight command"
 
 build_binary:
     post_flight: echo 'I overide you lel :P'
     builder: particle photon
     source: app/
-    script: make
 
 testing:
     script: examples/1. Basic Tests/GPIO/1. Set Digital Output/scenario.py

@@ -39,10 +39,10 @@ post_flight:
 
 testing:
     script: examples/1. Basic Tests/GPIO/1. Set Digital Output/scenario.py
-    env_vars:
-        - $SPN_PARTICLE_TOKEN
-    device_update:
-        devices:
-            - $DEVICE_1
-        ota_method: particle
-        binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
+#     env_vars:
+#         - $SPN_PARTICLE_TOKEN
+#     device_update:
+#         devices:
+#             - $DEVICE_1
+#         ota_method: particle
+#         binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l

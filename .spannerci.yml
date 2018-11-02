@@ -35,6 +35,7 @@ build_binary:
     post_flight: echo 'I overide you lel :P'
     builder: particle photon
     source: app/
+    script: echo "hello there"
 
 testing:
     script: examples/1. Basic Tests/GPIO/1. Set Digital Output/scenario.py

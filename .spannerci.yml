@@ -33,7 +33,7 @@ post_flight:
 
 build_binary:
     post_flight: echo 'I overide you lel :P'
-    builder: particle photon
+    builder: aws
     source: app/
 
 testing:

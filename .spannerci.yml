@@ -1,17 +1,6 @@
 # # code_qa:
 # #     type: basic
-
-# # build_binary:
-# #     type: 'aws esp32'
-# #     source_dir: 'app'
-# #     binary_name: my_binary
-# #     env_vars:
-# #         - $SPN_AWS_ACCESS_KEY_ID
-# #         - $SPN_AWS_SECRET_ACCESS_KEY
-# #         - $SPN_ESP32_THING_NAME
-# #         - $SPN_ESP32_WIFI_SSID
-# #         - $SPN_ESP32_WIFI_PASSWORD
-# #         - $SPN_ESP32_WIFI_SECURITY
+        
 # testing:
 #     source_dir: 'Scenario.py'
 #     env_vars:
@@ -31,11 +20,23 @@ pre_flight:
 post_flight: 
     - echo "Post flight command"
 
-build_binary:
-    post_flight: echo 'I overide you lel :P'
-    builder: aws
-    source: app/
+# build_binary:
+#     post_flight: echo 'I overide you lel :P'
+#     builder: aws
+#     source: app/
 
+
+build_binary:
+    type: 'aws esp32'
+    source: 'app'
+    env_vars:
+        - $SPN_AWS_ACCESS_KEY_ID
+        - $SPN_AWS_SECRET_ACCESS_KEY
+        - $SPN_ESP32_THING_NAME
+        - $SPN_ESP32_WIFI_SSID
+        - $SPN_ESP32_WIFI_PASSWORD
+        - $SPN_ESP32_WIFI_SECURITY
+       
 testing:
     script: examples/1. Basic Tests/GPIO/1. Set Digital Output/scenario.py
 #     env_vars:

@@ -27,7 +27,7 @@ post_flight:
 
 
 build_binary:
-    type: 'aws esp32'
+    builder: 'aws esp32'
     source: 'app'
     env_vars:
         - $SPN_AWS_ACCESS_KEY_ID

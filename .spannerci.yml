@@ -28,7 +28,7 @@ post_flight:
 
 build_binary:
     builder: 'aws esp32'
-    source: 'sp32_devkitc_demo/make'
+    source: 'sp32_devkitc_demo'
     env_vars:
         - $SPN_AWS_ACCESS_KEY_ID
         - $SPN_AWS_SECRET_ACCESS_KEY

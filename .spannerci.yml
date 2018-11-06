@@ -29,6 +29,7 @@ post_flight:
 build_binary:
     builder: 'aws esp32'
     source: 'esp32_devkitc_demo'
+    script: 'make oldconfig'
     pre_flight: 
         - cd $AMAZON_FREERTOS_ROOT/tools/aws_config_quick_start/
         - python SetupAWS.py setup

@@ -29,13 +29,13 @@ post_flight:
 build_binary:
     builder: 'aws esp32'
     source: 'esp32_devkitc_demo'
+    pre_flight:
+        - bash thing_config.sh
     env_vars:
         - $SPN_AWS_ACCESS_KEY_ID
         - $SPN_AWS_SECRET_ACCESS_KEY
-        - $SPN_ESP32_THING_NAME
-        - $SPN_ESP32_WIFI_SSID
-        - $SPN_ESP32_WIFI_PASSWORD
-        - $SPN_ESP32_WIFI_SECURITY
+        - $SPN_AWS_OUTPUT
+        - $SPN_AWS_REGION
        
 testing:
     script: examples/1. Basic Tests/GPIO/1. Set Digital Output/scenario.py

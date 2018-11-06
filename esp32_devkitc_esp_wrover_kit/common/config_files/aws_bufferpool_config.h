@@ -1,5 +1,5 @@
 /*
- * Amazon FreeRTOS V1.2.7
+ * Amazon FreeRTOS V1.4.2
  * Copyright (C) 2018 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -24,48 +24,21 @@
  */
 
 /**
- * @file aws_mqtt_config.h
- * @brief MQTT config options.
+ * @file aws_bufferpool_config.h
+ * @brief Buffer Pool config options.
  */
 
-#ifndef _AWS_MQTT_CONFIG_H_
-#define _AWS_MQTT_CONFIG_H_
-
-#include <stdint.h>
+#ifndef _AWS_BUFFER_POOL_CONFIG_H_
+#define _AWS_BUFFER_POOL_CONFIG_H_
 
 /**
- * @brief Enable subscription management.
- *
- * This gives the user flexibility of registering a callback per topic.
+ * @brief The number of buffers in the static buffer pool.
  */
-#define mqttconfigENABLE_SUBSCRIPTION_MANAGEMENT            ( 1 )
+#define bufferpoolconfigNUM_BUFFERS    ( 8 )
 
 /**
- * @brief Maximum length of the topic which can be stored in subscription
- * manager.
+ * @brief The size of each buffer in the static buffer pool.
  */
-#define mqttconfigSUBSCRIPTION_MANAGER_MAX_TOPIC_LENGTH     ( 128 )
+#define bufferpoolconfigBUFFER_SIZE    ( 2048 + 128 )
 
-/**
- * @brief Maximum number of subscriptions which can be stored in subscription
- * manager.
- */
-#define mqttconfigSUBSCRIPTION_MANAGER_MAX_SUBSCRIPTIONS    ( 8 )
-
-/*
- * Uncomment the following two lines to enable asserts.
- */
-/* extern void vAssertCalled( const char *pcFile, uint32_t ulLine ); */
-/* #define mqttconfigASSERT( x ) if( ( x ) == 0 ) vAssertCalled( __FILE__, __LINE__ ) */
-
-#if defined(AMAZON_FREERTOS_ENABLE_UNIT_TESTS)
-#include "unity_internals.h"
-#define mqttconfigASSERT( x )  if( ( x ) == 0 ) TEST_ABORT()
-#endif /* AMAZON_FREERTOS_ENABLE_UNIT_TESTS */
-
-/**
- * @brief Set this macro to 1 for enabling debug logs.
- */
-#define mqttconfigENABLE_DEBUG_LOGS    0
-
-#endif /* _AWS_MQTT_CONFIG_H_ */
+#endif /* _AWS_BUFFER_POOL_CONFIG_H_ */

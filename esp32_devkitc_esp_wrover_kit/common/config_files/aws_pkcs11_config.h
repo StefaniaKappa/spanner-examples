@@ -1,5 +1,5 @@
 /*
- * Amazon FreeRTOS V1.2.7
+ * Amazon FreeRTOS V1.4.2
  * Copyright (C) 2018 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -24,21 +24,21 @@
  */
 
 /**
- * @file aws_bufferpool_config.h
- * @brief Buffer Pool config options.
+ * @file aws_pkcs11_config.h
+ * @brief PCKS#11 config options.
  */
 
-#ifndef _AWS_BUFFER_POOL_CONFIG_H_
-#define _AWS_BUFFER_POOL_CONFIG_H_
+
+#ifndef _AWS_PKCS11_CONFIG_H_
+#define _AWS_PKCS11_CONFIG_H_
 
 /**
- * @brief The number of buffers in the static buffer pool.
+ * @brief File storage location definitions.
  */
-#define bufferpoolconfigNUM_BUFFERS    ( 8 )
+#define pkcs11configFILE_NAME_CLIENT_CERTIFICATE    "ESP_P11_Cert"
+#define pkcs11configFILE_NAME_KEY                   "ESP_P11_Key"
 
-/**
- * @brief The size of each buffer in the static buffer pool.
- */
-#define bufferpoolconfigBUFFER_SIZE    ( 2048 + 128 )
+/* A non-standard version of C_INITIALIZE should be used by this port. */
+/* #define pkcs11configC_INITIALIZE_ALT */
 
-#endif /* _AWS_BUFFER_POOL_CONFIG_H_ */
+#endif /* _AWS_PKCS11_CONFIG_H_ include guard. */

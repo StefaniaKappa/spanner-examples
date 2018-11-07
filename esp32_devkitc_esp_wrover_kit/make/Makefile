@@ -15,4 +15,5 @@ endif
 
 EXTRA_COMPONENT_DIRS := $(SPN_PROJECT_DIR)/esp32_devkitc_esp_wrover_kit/common/application_code/espressif_code
 
+export PROJECT_PATH := $(SPN_BUILDER_SDK)
 include $(IDF_PATH)/make/project.mk

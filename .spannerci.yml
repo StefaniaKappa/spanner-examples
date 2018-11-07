@@ -28,11 +28,10 @@ post_flight:
 
 build_binary:
     builder: 'aws esp32'
-    source: 'esp32_devkitc_esp_wrover_kit/'
-    binary_name: 'esp32_devkitc_esp_wrover_kit/build/aws_demo.bin'
     #pre_flight:
     #    - bash ./thing_config.sh
-    script: cd make/ && make
+    script: 'cd esp32_devkitc_esp_wrover_kit/make && make'
+    binary_name: 'esp32_devkitc_esp_wrover_kit/build/aws_demo.bin'
     env_vars:
         - $SPN_AWS_ACCESS_KEY_ID
         - $SPN_AWS_SECRET_ACCESS_KEY

@@ -3,7 +3,7 @@ import time
 from Spanner import Spanner
 from Testboard import Testboard
 
-testboard = Testboard("Tester1")
+testboard = Testboard("testboard_name")
 
 
 if __name__ == "__main__":

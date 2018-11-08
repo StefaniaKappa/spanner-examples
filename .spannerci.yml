@@ -26,20 +26,20 @@ post_flight:
 #     source: app/
 
 
-build_binary:
-    builder: 'aws esp32'
-    #pre_flight:
-    #    - bash ./thing_config.sh
-    script: 'cd esp32_devkitc_esp_wrover_kit/make && make'
-    binary_name: 'esp32_devkitc_esp_wrover_kit/build/aws_demo.bin'
-    env_vars:
-        - $SPN_AWS_ACCESS_KEY_ID
-        - $SPN_AWS_SECRET_ACCESS_KEY
-        - $SPN_AWS_OUTPUT
-        - $SPN_AWS_REGION
+# build_binary:
+#     builder: 'aws esp32'
+#     #pre_flight:
+#     #    - bash ./thing_config.sh
+#     script: 'cd esp32_devkitc_esp_wrover_kit/make && make'
+#     binary_name: 'esp32_devkitc_esp_wrover_kit/build/aws_demo.bin'
+#     env_vars:
+#         - $SPN_AWS_ACCESS_KEY_ID
+#         - $SPN_AWS_SECRET_ACCESS_KEY
+#         - $SPN_AWS_OUTPUT
+#         - $SPN_AWS_REGION
        
 testing:
-    script: examples/1. Basic Tests/GPIO/1. Set Digital Output/scenario.py
+    script: uartTest.py
 #     env_vars:
 #         - $SPN_PARTICLE_TOKEN
 #     device_update:

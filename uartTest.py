@@ -11,12 +11,9 @@ Vivamus nisi lorem, commodo id vulputate sed, feugiat et erat. Pellentesque mass
 Ut tincidunt, massa finibus vulputate consectetur, quam augue luctus lacus, elementum bibendum risus leo vel velit. Morbi congue velit ac mollis sollicitudin. Integer at vestibulum justo. Vestibulum in gravida purus. Pellentesque eleifend dui quis consectetur rutrum. In faucibus in metus vel tempus. Praesent quis justo tortor. Pellentesque non ornare purus. Phasellus lacus tortor, pharetra eu facilisis in, porta vulputate mi. Suspendisse faucibus fringilla felis, vel sollicitudin eros auctor eget. Aenean auctor vitae ligula non aliquet. Sed eleifend quam velit, a eleifend tortor accumsan vel.
 Cras euismod, tortor eget ullamcorper sollicitudin, metus erat fermentum ex, et dapibus ipsum sapien a nisl. Cras nec leo porta, congue nisi vel turpis duis. """
 
-def read_in_chunks(file_object, chunk_size):
-    while True:
-        data = file_object.read(chunk_size)
-        if not data:
-            break
-        yield data
+def chunks(data, chunk_size):
+    for i in range(0, len(data), chunk_size):
+        yield data[i:i + chunk_size]
 
 def myMockTest():
     
@@ -25,7 +22,7 @@ def myMockTest():
         setup(9600, Serial.DATA_BITS_8 | Serial.STOP_BITS_1 | Serial.PARITY_NO)
  
     # Send the dummy text
-    for piece in read_in_chunks(LOREM, my_procedure.MAX_PAYLOAD_LEN):
+    for piece in chunks(LOREM, my_procedure.MAX_PAYLOAD_LEN):
         my_procedure = my_procedure.doSerialWrite(piece)
     
     # Exec

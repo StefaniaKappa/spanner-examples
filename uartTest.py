@@ -6,7 +6,10 @@ from Testboard import Testboard
 testboard = Testboard("testboard_name")
 
 def read_in_chunks(file_object, chunk_size):
-    while data = file_object.read(chunk_size):
+    while True:
+        data = file_object.read(chunk_size):
+        if not data:
+            break
         yield data
 
 def myMockTest():

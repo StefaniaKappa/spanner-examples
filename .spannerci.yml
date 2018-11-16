@@ -22,7 +22,7 @@ post_flight:
 
 build_binary:
     builder: 'particle photon'
-    binary_name: './build/myApp.bin'
+    binary_name: './app/target/app.bin'
     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
    
 # build_binary:

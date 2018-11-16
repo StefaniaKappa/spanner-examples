@@ -22,9 +22,8 @@ post_flight:
 
 build_binary:
     builder: 'particle photon'
-    source: app/
     binary_name: './build/myApp.bin'
-    script: cd $SPN_BUILDER_SDK && make PLATFORM=photon
+    script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
    
 # build_binary:
 #     builder: 'aws esp32'

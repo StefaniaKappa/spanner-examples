@@ -20,11 +20,10 @@ pre_flight:
 post_flight: 
     - echo "Post flight command"
 
-# build_binary:
-#     post_flight: echo 'I overide you lel :P'
-#     builder: aws
-#     source: app/
-
+build_binary:
+    builder: 'particle photon'
+    source: app/
+    binary_name: './build/myApp.bin'
 
 # build_binary:
 #     builder: 'aws esp32'
@@ -38,8 +37,8 @@ post_flight:
 #         - $SPN_AWS_OUTPUT
 #         - $SPN_AWS_REGION
        
-testing:
-    script: uartTest.py
+#testing:
+#    script: uartTest.py
 #     env_vars:
 #         - $SPN_PARTICLE_TOKEN
 #     device_update:

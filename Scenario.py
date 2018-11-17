@@ -1,98 +1,88 @@
-# This example will test our Product's serial interface
-#
-# The goal of this example is to show you how you can read and write data from/to
-# your device using the serial interface, and how you can assert string and byte
-# values.
-#
-# If you want to replicate this setup, serial interface is available via the
-# Testboard's TX and RX pins. To use them to communicate with your Product,
-# connect the TX pin to your device's RX pin, the RX to your device's TX pin,
-# and the ground to your device's ground.
-#
-# Please take into account that the voltage levels on these pins operate at 0V to
-# 3.3V and should not be connected directly to a computer's RS232 serial port which
-# operates at +/- 12V and will damage the Testboard.
-#
-# Also note that for the serial channel configuration, it is possible to specify
-# the baud rate, the number of data bits, stop bits, parity, flow control and other
-# settings.
-# xeloou dear
-
 import time
 from Spanner import Spanner
 from Testboard import Testboard
+import Device
 
-testboard = Testboard("Tester1")
+testboard = Testboard("Tester2")
 
+# Our Testboard's D3 Pin is connected to a power switching circuit that controls
+# the power going to the device. When we toggle it HIGH, the device will be
+# powered, when LOW, the device will shut down
+OUTPUT_PIN = "D3"
 
-#
-# Setup the serial interface
-#
-def serial_config():
-    Serial = Testboard.Serial
-    # Configure serial interface (baudrate and config, where config:
-    # data bits | stop bits | parity | hw flow control | LIN configuration
-    testboard.serialSetup(9600, Serial.DATA_BITS_8 | Serial.STOP_BITS_1 | Serial.PARITY_NO)
+def measure_power_consumption():
 
+    # Turn the device off
+    testboard.digitalWrite(OUTPUT_PIN, "LOW");
 
-#
-# Validate device TX by writing a series of bytes from device to testboard
-#
-def validate_serial_TX_data():
+    # Wait for a while for it to shut down
+    time.sleep(2)
 
-    buffer = ''
-    end_of_buff = False
+    # Turn the device back on
+    testboard.digitalWrite(OUTPUT_PIN, "HIGH");
 
-    spanner.assertEqual("Hello Testboard\n", "Hello Testboard\n")
+    # The device runs some initialization actions in the beginning, which are
+    # not indicative of the true power consumption. Therefore we wait for a
+    # while for the initial conditions to pass
+#     time.sleep(5)
 
-    print("Waiting for handshake")
+    # Start measuring power consumption
+#     testboard.startPowerMeasurement()
+    
+    # Measure for 5 minutes
+#     time.sleep(10)
 
-    while not end_of_buff:
-        data_length = testboard.serialAvailable()
-        print("Available chars: " + str(data_length))
+    # Stop measuring power consumption
+#     testboard.stopPowerMeasurement()
+    
+#     res = testboard.measuredPowerConsumption()
+#     print('res')
+#     print(str(res))
+    # Make sure the total power consumption didn't exceed 100mAh. The
+    # measuredPowerConsumption() will return the total power consumption
+    # measured in the measuring period, in mAh. Then we use the assertLessThan()
+    # function to assert that this is less than the target value of 100.
+    spanner.assertLessThan(100, 20)
 
-        # Read the requested bytes from testboard's serial
-        while data_length > 0:
-            new_char = testboard.serialReadByte().decode('ascii')
-            buffer += new_char
-            data_length -= 1
-            if new_char == '\n':
-                end_of_buff = True
-                break
+def measurer_consumption():
 
-    print("Received Buffer " + buffer)
+    # Turn the device off
+    testboard.digitalWrite(OUTPUT_PIN, "LOW");
 
-    # Check if we received the requested bytes in testboard
-    spanner.assertEqual("Hello Testboard\n", buffer)
+    # Wait for a while for it to shut down
+    time.sleep(2)
 
-    # Send to device
-    testboard.serialWrite("Hello device\n")
+    # Turn the device back on
+    testboard.digitalWrite(OUTPUT_PIN, "HIGH");
 
+    # The device runs some initialization actions in the beginning, which are
+    # not indicative of the true power consumption. Therefore we wait for a
+    # while for the initial conditions to pass
+#     time.sleep(5)
 
-#
-# Validate device TX by writing one byte from device to testboard and echoing
-# back the data to the device.
-#
-def validate_serial_TX_echo_back():
-    # Read one byte from testboard's serial
-    value = testboard.serialReadByte()
+    # Start measuring power consumption
+#     testboard.startPowerMeasurement()
+    
+    # Measure for 5 minutes
+#     time.sleep(10)
 
-    # Check if we received the requested byte in the testboard
-    spanner.assertEqual(b'\x31', value)
-
-    # Write one byte to the device
-    testboard.serialWrite(value)
-
-
+    # Stop measuring power consumption
+#     testboard.stopPowerMeasurement()
+    
+#     res = testboard.measuredPowerConsumption()
+#     print('res')
+#     print(str(res))
+    # Make sure the total power consumption didn't exceed 100mAh. The
+    # measuredPowerConsumption() will return the total power consumption
+    # measured in the measuring period, in mAh. Then we use the assertLessThan()
+    # function to assert that this is less than the target value of 100.
+    spanner.assertLessThan(100, 20)    
+    
 if __name__ == "__main__":
-
-    serial_config()
-
-    time.sleep(2)
-
-    validate_serial_TX_data()
-
-    time.sleep(2)
-
-    validate_serial_TX_echo_back()
-
+    measure_power_consumption()
+    time.sleep(5)
+    measurer_consumption()
+    time.sleep(5)
+    measure_power_consumption()
+    time.sleep(5)
+measurer_consumption()

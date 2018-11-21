@@ -20,9 +20,11 @@ def myMockTest():
  
     # Send the dummy text
     for piece in chunks(LOREM, my_procedure.MAX_PAYLOAD_LEN):
-        my_procedure = my_procedure.doSerialWrite(piece)
+        my_procedure.doSerialWrite(piece)
     
-    my_procedure.doWait(1000).doAssertSerialRead("%d\n" % (len(LOREM),))
+    my_procedure.doSerialWrite("\n").\
+                 doWait(1000).\
+                 doAssertSerialRead("%d\n" % (len(LOREM),))
     
     # Exec
     spanner.assertEqual(my_procedure.run(), 0)

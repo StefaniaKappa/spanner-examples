@@ -11,21 +11,20 @@ def chunks(data, chunk_size):
         yield data[i:i + chunk_size]
 
 def myMockTest():
-    
+
     Serial = Testboard.Serial
     my_procedure = testboard.createProcedure('UART').\
         setup(9600, Serial.DATA_BITS_8 | Serial.STOP_BITS_1 | Serial.PARITY_NO).\
         doAssertSerialRead('ready\n').\
         doWait(1000)
- 
+
     # Send the dummy text
     for piece in chunks(LOREM, my_procedure.MAX_PAYLOAD_LEN):
         my_procedure.doSerialWrite(piece)
-    
-    my_procedure.doSerialWrite("\n").\
-                 doWait(1000).\
-                 doAssertSerialRead("%d\n" % (len(LOREM),))
-    
+
+    my_procedure.doSerialWrite('\n').\
+                 doAssertSerialRead('%d\n' % (len(LOREM),))
+
     # Exec
     spanner.assertEqual(my_procedure.run(), 0)
 

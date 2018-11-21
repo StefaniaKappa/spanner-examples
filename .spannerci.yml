@@ -20,10 +20,10 @@
 # post_flight: 
 #     - echo "Post flight command"
 
-# build_binary:
-#     builder: 'particle photon'
-#     binary_name: 'app/target/app.bin'
-#     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
+build_binary:
+    builder: 'particle photon'
+    binary_name: 'app/target/app.bin'
+    script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
    
 # build_binary:
 #     builder: 'aws esp32'

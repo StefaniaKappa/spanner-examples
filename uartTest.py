@@ -38,9 +38,7 @@ def char_count_mock():
     Serial = Testboard.Serial
     
     my_procedure = testboard.createProcedure('UART')
-        # Serial setup
         .setup(9600, Serial.DATA_BITS_8 | Serial.STOP_BITS_1 | Serial.PARITY_NO)
-        # Wait for the device 'ready\n' flag to initiate communication
         .doAssertSerialRead('ready\n')
         .doWait(1000)
 

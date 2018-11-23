@@ -67,7 +67,7 @@
         
 testing:
     pre_flight: echo "hello there"
-    script: 'uartTest.py'
+    script: 'examples/3. Complex Tests/11. Measure Total Power Consumption in Time Period/scenario.py'
     post_flight: echo "Done"
 #     env_vars:
 #         - $SPN_PARTICLE_TOKEN

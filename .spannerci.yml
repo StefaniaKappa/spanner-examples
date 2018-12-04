@@ -20,15 +20,15 @@
 # post_flight: 
 #     - echo "Post flight command"
 
-# build_binary:
-#     pre_flight: 
-#        - echo "hello there"
-#        - cd ../ && echo $PWD
-#     builder: 'particle photon'
-#     binary_name: 'app/target/app.bin'
-#     script: echo 'hello there' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
-#     post_flight: 
-#        - echo "finito la musica"
+build_binary:
+    pre_flight: 
+       - echo "hello there"
+       - cd ../ && echo $PWD
+    builder: 'particle photon'
+    binary_name: 'app/target/app.bin'
+    script: echo 'hello there' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
+    post_flight: 
+       - echo "finito la musica"
        
 # build_binary:
 #     builder: 'aws esp32'
@@ -65,16 +65,16 @@
 #         - $SPN_ESP32_WIFI_PASSWORD
 #         - $SPN_ESP32_WIFI_SECURITY
         
-testing:
-    pre_flight: echo "hello there"
-    script: 'examples/1. Basic Tests/GPIO/1. Set Digital Output/scenario.py'
-    post_flight: echo "Done"
-    env_vars:
-        - $SPN_PARTICLE_TOKEN
-    device_update:
-        devices:
-            - $DEVICE_1    
-        ota_method: 'particle'
-#         binary: auto
-#         binary: https://drive.google.com/uc?export=download&id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
-        binary: binary/mike_binary.bin
+# testing:
+#     pre_flight: echo "hello there"
+#     script: 'examples/1. Basic Tests/GPIO/1. Set Digital Output/scenario.py'
+#     post_flight: echo "Done"
+#     env_vars:
+#         - $SPN_PARTICLE_TOKEN
+#     device_update:
+#         devices:
+#             - $DEVICE_1    
+#         ota_method: 'particle'
+# #         binary: auto
+# #         binary: https://drive.google.com/uc?export=download&id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
+#         binary: binary/mike_binary.bin

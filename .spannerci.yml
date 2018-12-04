@@ -69,12 +69,12 @@ testing:
     pre_flight: echo "hello there"
     script: 'examples/3. Complex Tests/11. Measure Total Power Consumption in Time Period/scenario.py'
     post_flight: echo "Done"
-#     env_vars:
-#         - $SPN_PARTICLE_TOKEN
-#     device_update:
-#          devices:
-#             - $DEVICE_1    
-#          ota_method: 'particle'
-# #          #binary: auto
-#          binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
-# #          #binary: binary/mike_binary.bin
+    env_vars:
+        - $SPN_PARTICLE_TOKEN
+    device_update:
+         devices:
+            - $DEVICE_1    
+         ota_method: 'particle'
+         binary: auto
+#         binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
+#          #binary: binary/mike_binary.bin

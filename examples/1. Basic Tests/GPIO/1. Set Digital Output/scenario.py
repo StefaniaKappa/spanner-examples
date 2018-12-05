@@ -8,9 +8,8 @@
 # anything. Of course this would never be a real world example, it's only for
 # educational purposes
 
-import time
-import Spanner as spanner
-from Testboard import Testboard
+import Spanner
+import Testboard
 
 testboard = Testboard("testboard_name")
 
@@ -26,7 +25,7 @@ def toggle_digital_output():
 
     testboard.digitalWrite(OUTPUT_PIN, 'LOW')
     
-    spanner.assertTrue(True)
+    Spanner.assertTrue(True)
     
 if __name__ == "__main__":
     toggle_digital_output()

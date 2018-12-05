@@ -8,6 +8,7 @@
 # anything. Of course this would never be a real world example, it's only for
 # educational purposes
 
+import time
 import Spanner
 from Testboard import Testboard
 

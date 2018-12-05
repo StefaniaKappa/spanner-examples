@@ -9,7 +9,7 @@
 # educational purposes
 
 import Spanner
-import Testboard
+from Testboard import Testboard
 
 testboard = Testboard("testboard_name")
 

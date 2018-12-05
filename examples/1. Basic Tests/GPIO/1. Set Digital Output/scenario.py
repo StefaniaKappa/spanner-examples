@@ -9,7 +9,7 @@
 # educational purposes
 
 import time
-from Spanner import Spanner
+import Spanner as spanner
 from Testboard import Testboard
 
 testboard = Testboard("testboard_name")
@@ -21,10 +21,12 @@ OUTPUT_PIN = "D3"
 def toggle_digital_output():
     # set PIN state
     testboard.digitalWrite(OUTPUT_PIN, 'HIGH')
-
+    
     time.sleep(2)
 
     testboard.digitalWrite(OUTPUT_PIN, 'LOW')
-
+    
+    spanner.assertTrue(True)
+    
 if __name__ == "__main__":
     toggle_digital_output()

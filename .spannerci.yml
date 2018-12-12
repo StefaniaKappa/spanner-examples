@@ -70,7 +70,8 @@
 build_binary:
     builder: 'particle photon'
     pre_flight:
-       - echo "preflight";
+       - echo locale
+       - exit 1
     script: echo 'script' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
     post_flight: 
        - echo "done"

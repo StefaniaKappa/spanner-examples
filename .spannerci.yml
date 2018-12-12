@@ -75,16 +75,18 @@
 #     binary_name: 'app/target/app.bin'
 
 testing:
-    pre_flight: echo "hello there"
+    pre_flight: 
+       - echo "Step 1"
+       - bash -c "exit 1;"
     script: 'examples/1. Basic Tests/GPIO/1. Set Digital Output/scenario.py'
     post_flight: echo "Done"
-#     env_vars:
-#         - $SPN_PARTICLE_TOKEN
-#     device_update:
-#         devices:
-#             - $DEVICE_1    
-#         ota_method: 'particle'
-# #         binary: auto
-# #         binary: https://drive.google.com/uc?export=download&id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
-#         binary: binary/mike_binary.bin
+    env_vars:
+        - $SPN_PARTICLE_TOKEN
+    device_update:
+        devices:
+            - $DEVICE_1    
+        ota_method: 'particle'
+#         binary: auto
+        binary: https://drive.google.com/uc?export=download&id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
+#        binary: binary/mike_binary.bin
         

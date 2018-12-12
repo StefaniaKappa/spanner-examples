@@ -70,8 +70,9 @@
 build_binary:
     builder: 'particle photon'
     pre_flight:
-       - bash -c "exit 1;";
-    script: echo 'script' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
+       - echo "preflight";
+#     script: echo 'script' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
+    script: bash -c "exit 1;"
     post_flight: echo "done"
     binary_name: 'app/target/app.bin'
 

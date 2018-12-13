@@ -70,7 +70,7 @@
 build_binary:
     builder: 'particle photon'
     pre_flight: 
-       - bash -c "exit 1;"
+       - echo "Pre flight commands"
     script: echo 'script' && python -c "import sys; sys.exit(10);"
     post_flight: 
        - echo "done"

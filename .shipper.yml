@@ -3,7 +3,7 @@ envs:
     description: "My env description"
     devices: !!inc/file dev-prod.yml
     app: scripts/app.py
-  develop-1:
+  develop1:
     description: "Running directly from the stens"
     devices: !!inc/file dev-prod.yml
     app: scripts/app.py

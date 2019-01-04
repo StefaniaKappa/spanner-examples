@@ -5,5 +5,5 @@ envs:
     -app: scripts/app.py
   develop-1:
     -description: "Running directly from the stens"
-    -devices: !!inc/file dev-develop.yml
+    -devices: !!inc/file dev-prod.yml
     -app: scripts/app.py

@@ -1,0 +1,12 @@
+device1:
+  Name: Rasp
+  Type: linux
+  UID: dsdsf3434
+  location: fact1
+  certs: keyboard cat
+device2:
+  Name: N2
+  Type: plat
+  UID: 1261111115sds
+  location: fact1
+  certs: keyboard cat2

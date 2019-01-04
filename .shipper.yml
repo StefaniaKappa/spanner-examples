@@ -1,5 +1,4 @@
 envs:
-  test
   production:
     -description: "My env description"
     -devices: !!inc/file dev-prod.yml

@@ -1,12 +1,14 @@
 device1:
-  Name: Rasp
-  Type: linux
-  UID: dsdsf3434
+  name: Rasp
+  type: linux
+  uuid: dsdsf3434
+  serial: 123456
   location: fact1
   certs: keyboard cat
 device2:
-  Name: N2
-  Type: plat
-  UID: 1261111115sds
+  name: N2
+  type: plat
+  serial: 123456
+  uuid: 1261111115sds
   location: fact1
   certs: keyboard cat2

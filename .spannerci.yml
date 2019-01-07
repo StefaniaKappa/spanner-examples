@@ -54,6 +54,11 @@
 #         ota_method: particle
 #         binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
 
+testing:
+    pre_flight: echo "Test"
+    script: 'examples/1. Basic Tests/GPIO/4. Set Analog Output/scenario.py'
+    post_flight: echo "done"
+    
 # build_binary:
 #     builder: 'particle photon'
 #     source: 'app'
@@ -67,15 +72,15 @@
 #         - $SPN_ESP32_WIFI_PASSWORD
 #         - $SPN_ESP32_WIFI_SECURITY
         
-build_binary:
-    builder: 'particle photon'
-    pre_flight: 
-       - echo "Pre flight commands"
-    script: echo 'script'
-    post_flight: 
-       - echo "done"
-       - bash -c "exit 2;"
-    binary_name: 'app/target/app.bin'
+# build_binary:
+#     builder: 'particle photon'
+#     pre_flight: 
+#        - echo "Pre flight commands"
+#     script: echo 'script'
+#     post_flight: 
+#        - echo "done"
+#        - bash -c "exit 2;"
+#     binary_name: 'app/target/app.bin'
 
 # testing:
 #     pre_flight: 

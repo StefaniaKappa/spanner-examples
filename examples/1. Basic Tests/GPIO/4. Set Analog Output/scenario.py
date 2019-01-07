@@ -10,7 +10,7 @@
 # educational purposes
 
 import time
-from Spanner import Spanner
+import Spanner
 from Testboard import Testboard
 
 testboard = Testboard("testboard_name")
@@ -26,5 +26,4 @@ def set_analog_output():
     testboard.analogWrite(DAC1, 2482)
 
 if __name__ == "__main__":
-
     set_analog_output()

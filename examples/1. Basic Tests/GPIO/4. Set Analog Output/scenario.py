@@ -10,7 +10,7 @@
 # educational purposes
 
 import time
-import Spanner
+import spanner
 from Testboard import Testboard
 
 testboard = Testboard("testboard_name")

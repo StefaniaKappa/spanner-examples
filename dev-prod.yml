@@ -1,7 +1,6 @@
 device1:
   name: "Wiced Board 1"
   type: "armCortexM"
-  uuid: "865944d0772f8810b04ebaf7677361d7"
   serial: "33323533-33324718-003F002E"
   location: "fact1"
   certs: "keyboard cat"
@@ -9,6 +8,5 @@ device2:
   name: "Wiced Board 2"
   type: "armCortexM"
   serial: "30353634-3033470B-0032001F"
-  uuid: "e176761f957dbc745f0827e677d95c48"
   location: "fact1"
   certs: "keyboard cat2"

@@ -1,13 +1,13 @@
 device1:
   name: Rasp
-  type: linux
+  type: armCortexM
   uuid: dsdsf3434
   serial: dasdsad1232
   location: fact1
   certs: keyboard cat
 device2:
   name: N2
-  type: plat
+  type: armCortexM
   serial: ds123456
   uuid: 1261111115sds
   location: fact1

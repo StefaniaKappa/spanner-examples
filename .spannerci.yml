@@ -60,7 +60,7 @@ testing:
     device_update:
         ota_method: 'spanner shipper'
         env: 'production'
-        repo: 'same'
+        repo: 'current'
     post_flight: echo "done"
     
 # build_binary:

@@ -1,9 +1,9 @@
-# device1:
-#   name: "Wiced Board 1"
-#   type: "armCortexM"
-#   serial: "33323533-33324718-003F002E"
-#   location: "fact1"
-#   certs: "keyboard cat"
+device1:
+  name: "Wiced Board 1"
+  type: "armCortexM"
+  serial: "33323533-33324718-003F002E"
+  location: "fact1"
+  certs: "keyboard cat"
 device2:
   name: "Wiced Board 2"
   type: "armCortexM"

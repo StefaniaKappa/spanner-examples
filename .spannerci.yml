@@ -56,11 +56,11 @@
 
 testing:
     pre_flight: echo "Test"
-    script: 'examples/1. Basic Tests/GPIO/4. Set Analog Output/scenario.py'
-    device_update:
-        ota_method: 'spanner shipper'
-        env: 'production'
-        repo: 'current'
+    script: 'examples/long_test.py'
+#     device_update:
+#         ota_method: 'spanner shipper'
+#         env: 'production'
+#         repo: 'current'
     post_flight: echo "done"
     
 # build_binary:

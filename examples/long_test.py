@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import time
+import string
+import random
 
 for i in range(1, 10):
   print('----' + ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(i*1000)) + '----', flush=True)

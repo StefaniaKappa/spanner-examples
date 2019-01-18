@@ -57,3 +57,4 @@ def char_count_mock():
 if __name__ == "__main__":
     # Start the test
     char_count_mock()
+#test

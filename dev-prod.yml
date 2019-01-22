@@ -16,3 +16,10 @@ Nikolas:
   serial: "30353634-3033470B-0032001F"
   location: "fact1"
   certs: "keyboard cat2"
+Random:
+  name: "random board"
+  type: "armCortexM"
+  serial: "30353634-3033470B-0032005F"
+  location: "fact1"
+  certs: "keyboard cat2"
+

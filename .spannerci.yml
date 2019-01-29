@@ -56,7 +56,7 @@
 
 testing:
     pre_flight: echo "Test"
-    script: 'examples/long_test.py'
+    script: 'i2cTest.py'
 #     device_update:
 #         ota_method: 'spanner shipper'
 #         env: 'production'

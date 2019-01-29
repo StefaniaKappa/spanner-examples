@@ -9,7 +9,7 @@ def char_count_mock():
     my_procedure = testboard.createProcedure('I2C')\
         .setSpeed(100000)\
         .begin()\
-        .write(0x18, "")\
+        .write(0x18, "memas")\
         .read(0x18, 6)
         .delay(1000)
         .read(0x18, 6)

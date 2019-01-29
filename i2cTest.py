@@ -1,31 +1,25 @@
 import time
-from Spanner import Spanner
+import Spanner
 from Testboard import Testboard
 
 testboard = Testboard("testboard_name")
 
-  
-  
 def char_count_mock():
   
     my_procedure = testboard.createProcedure('I2C')\
         .setSpeed(100000)\
-        .setThreasholds(val < 25)
-        .setAssertion()
         .begin()\
-        .write(0x18, "acffd")\
-        .read(0x18, "dsdsdsd")
+        .write(0x18, "")\
+        .read(0x18, 6)
         .delay(200)
-        .read(0x18, 6, store=True)
+        .read(0x18, 6)
         .delay(200)
-        .read(0x18, store=True)
+        .read(0x18, 6)
         
 
     # Execute the mock function
-    spanner.assertEqual(my_procedure.run(), 0)
-    spanner.assertEqual(my_procedure.withResults(), 0)
+    my_procedure.run(withResults=True)
 
-if __name__ == "__main__":
+ if __name__ == "__main__":
     # Start the test
     char_count_mock()
-#test

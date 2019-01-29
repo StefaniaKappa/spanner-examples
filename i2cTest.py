@@ -10,9 +10,9 @@ def char_count_mock():
       .begin()\
       .write(0x18, "memas")\
       .read(0x18, 6)\
-      .delay(1000)\
+      .doWait(1000)\
       .read(0x18, 6)\
-      .delay(1000)\
+      .doWait(1000)\
       .read(0x18, 6)        
 
   # Execute the mock function

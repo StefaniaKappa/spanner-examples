@@ -10,11 +10,11 @@ def char_count_mock():
         .setSpeed(100000)\
         .begin()\
         .write(0x18, "memas")\
-        .read(0x18, 6)
-        .delay(1000)
-        .read(0x18, 6)
-        .delay(1000)
-        .read(0x18, 6)
+        .read(0x18, 6)\
+        .delay(1000)\
+        .read(0x18, 6)\
+        .delay(1000)\
+        .read(0x18, 6)\
         
 
     # Execute the mock function

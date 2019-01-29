@@ -9,11 +9,7 @@ def char_count_mock():
       .setSpeed(100000)\
       .begin()\
       .write(0x18, bytearray([168]))\
-      .read(0x18, 6)\
-      .doWait(1000)\
-      .read(0x18, 6)\
-      .doWait(1000)\
-      .read(0x18, 6)        
+      .read(0x18, 6)
 
   # Execute the mock function
   my_procedure.run(withResults=True)

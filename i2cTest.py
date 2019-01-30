@@ -17,8 +17,8 @@ def char_count_mock():
 
   # Execute the mock function
   exit_code, results = my_procedure.run(withResults=True)
-  
-  print(results)
+  for r in results:
+    print(r)
 
 if __name__ == "__main__":
   # Start the test

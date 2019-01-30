@@ -36,7 +36,7 @@ def z_axis_check():
     Spanner.assertLessThan(100, abs(z - 8000))
 
 if __name__ == "__main__":
-  p = Process(target=init_slave))
+  p = Process(target=init_slave)
   p.start()
   z_axis_check()
   p.join()

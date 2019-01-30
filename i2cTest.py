@@ -1,5 +1,3 @@
-import time
-import sys
 import Spanner
 from Testboard import Testboard
 
@@ -20,13 +18,9 @@ def char_count_mock():
   exit_code, results = my_procedure.run(withResults=True)
   
   for result in results:
-    x = result[0] | result[1] << 8
-    y = result[2] | result[3] << 8
-    z = result[4] | result[5] << 8
-    print(x, y, z)
-    x = int.from_bytes(x, byteorder=sys.byteorder, signed=False)
-    y = int.from_bytes(x, byteorder=sys.byteorder, signed=False)
-    z = int.from_bytes(x, byteorder=sys.byteorder, signed=False)
+    x = int.from_bytes(result[0:2], byteorder='little', signed=False)
+    y = int.from_bytes(result[2:4], byteorder='little', signed=False)
+    z = int.from_bytes(result[4:6], byteorder='little', signed=False)
     print(x, y, z)
 
 if __name__ == "__main__":

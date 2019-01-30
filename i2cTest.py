@@ -1,7 +1,18 @@
 import Spanner
+from multiprocessing import Process
 from Testboard import Testboard
 
 testboard = Testboard("testboard_name")
+slave_testboard = Testboard("slave_testboard")
+
+def init_slave():
+  my_procedure = slave_testboard.createProcedure('I2C-Slave')\
+      .setSpeed(100000)\
+      .begin(0x19)\
+      .write(bytearray([10] * 18))
+  
+  exit_code = my_procedure.run()
+  print("Slave ended with %d\n" % (exit_code,))
 
 def z_axis_check():
   my_procedure = testboard.createProcedure('I2C-Master')\
@@ -10,8 +21,8 @@ def z_axis_check():
   
   for _ in range(3):
       my_procedure\
-        .write(0x18, bytearray([168]))\
-        .read(0x18, 6)\
+        .write(0x19, bytearray([168]))\
+        .read(0x19, 6)\
         .doWait(1000)
 
   # Execute the mock function
@@ -25,4 +36,7 @@ def z_axis_check():
     Spanner.assertLessThan(100, abs(z - 8000))
 
 if __name__ == "__main__":
+  p = Process(target=init_slave))
+  p.start()
   z_axis_check()
+  p.join()

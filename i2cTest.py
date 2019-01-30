@@ -21,7 +21,7 @@ def char_count_mock():
   for result in results:
     x = result[0] | result[1] << 8
     y = result[2] | result[3] << 8
-    z = result[4] | require[4] << 8
+    z = result[4] | require[5] << 8
     print(x, y, z)
 
 if __name__ == "__main__":

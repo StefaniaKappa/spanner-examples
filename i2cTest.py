@@ -21,7 +21,10 @@ def char_count_mock():
     x = int.from_bytes(result[0:2], byteorder='little', signed=False)
     y = int.from_bytes(result[2:4], byteorder='little', signed=False)
     z = int.from_bytes(result[4:6], byteorder='little', signed=False)
-    print(x, y, z)
+    X_g = x / 8190.0
+    Y_g = y / 8190.0
+    Z_g = z / 8190.0
+    
 
 if __name__ == "__main__":
   # Start the test

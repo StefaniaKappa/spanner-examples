@@ -24,6 +24,7 @@ def char_count_mock():
     X_g = x / 8190.0
     Y_g = y / 8190.0
     Z_g = z / 8190.0
+    print("X: %.2f, Y: %.2f, Z: %.2f" % (X_g, Y_g, Z_g))
     
 
 if __name__ == "__main__":

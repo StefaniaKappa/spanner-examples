@@ -17,8 +17,12 @@ def char_count_mock():
 
   # Execute the mock function
   exit_code, results = my_procedure.run(withResults=True)
-  for r in results:
-    print(r)
+  
+  for result in results:
+    x = result[0] | result[1] << 8
+    y = result[2] | result[3] << 8
+    z = result[4] | require[4] << 8
+    print(x, y, z)
 
 if __name__ == "__main__":
   # Start the test

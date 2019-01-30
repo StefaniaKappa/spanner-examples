@@ -18,9 +18,9 @@ def char_count_mock():
   exit_code, results = my_procedure.run(withResults=True)
   
   for result in results:
-    x = int.from_bytes(result[0:2], byteorder='little', signed=False)
-    y = int.from_bytes(result[2:4], byteorder='little', signed=False)
-    z = int.from_bytes(result[4:6], byteorder='little', signed=False)
+    x = int.from_bytes(result[0:2], byteorder='little', signed=True)
+    y = int.from_bytes(result[2:4], byteorder='little', signed=True)
+    z = int.from_bytes(result[4:6], byteorder='little', signed=True)
     #X_g = x / 8190.0
     #Y_g = y / 8190.0
     #Z_g = z / 8190.0

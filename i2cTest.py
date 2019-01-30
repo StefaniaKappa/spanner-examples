@@ -22,7 +22,7 @@ def char_count_mock():
     x = result[0] | result[1] << 8
     y = result[2] | result[3] << 8
     z = result[4] | result[5] << 8
-    print(x, y, z)
+    print(list(map(lambda b: int.from_bytes(b, signed=False), [x, y, z])))
 
 if __name__ == "__main__":
   # Start the test

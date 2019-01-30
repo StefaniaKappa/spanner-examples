@@ -12,7 +12,8 @@ def char_count_mock():
   for _ in range(10):
       my_procedure\
         .write(0x18, bytearray([168]))\
-        .read(0x18, 6)
+        .read(0x18, 6)\
+        .doWait(200)
 
   # Execute the mock function
   exit_code, results = my_procedure.run(withResults=True)

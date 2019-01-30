@@ -4,7 +4,7 @@ from Testboard import Testboard
 testboard = Testboard("testboard_name")
 
 def z_axis_check():
-  my_procedure = testboard.createProcedure('I2C')\
+  my_procedure = testboard.createProcedure('I2C-Master')\
       .setSpeed(100000)\
       .begin()
   

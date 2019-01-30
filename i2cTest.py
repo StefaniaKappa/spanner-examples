@@ -24,7 +24,7 @@ def char_count_mock():
     y = result[2] | result[3] << 8
     z = result[4] | result[5] << 8
     print(x, y, z)
-    x, y, z = tupple(map(lambda b: int.from_bytes(b, byteorder=sys.byteorder, signed=False), [x, y, z])))
+    x, y, z = tuple(map(lambda b: int.from_bytes(b, byteorder=sys.byteorder, signed=False), [x, y, z])))
     print(x, y, z)
 
 if __name__ == "__main__":

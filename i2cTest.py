@@ -9,7 +9,7 @@ def init_slave():
   my_procedure = slave_testboard.createProcedure('I2C-Slave')\
       .setSpeed(100000)\
       .begin(0x19)\
-      .write(bytearray([10] * 18))
+      .write(bytearray([10] * 18), timeout=50000)
   
   exit_code = my_procedure.run()
   print("Slave ended with %d\n" % (exit_code,))

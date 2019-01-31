@@ -1,4 +1,5 @@
 import Spanner
+import time
 from multiprocessing import Process
 from Testboard import Testboard
 
@@ -40,5 +41,6 @@ def z_axis_check():
 if __name__ == "__main__":
   p = Process(target=init_slave)
   p.start()
+  time.sleep(2)
   z_axis_check()
   p.join()

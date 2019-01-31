@@ -9,7 +9,7 @@ slave_testboard = Testboard("slave_testboard")
 def init_slave():
   my_procedure = slave_testboard.createProcedure('I2C-Slave')\
       .setSpeed(100000)\
-      .begin(0x19)\
+      .begin(0x20)\
       .write(bytearray([10] * 6))\
       .write(bytearray([11] * 6))\
       .write(bytearray([12] * 6))
@@ -24,8 +24,8 @@ def z_axis_check():
   
   for _ in range(3):
       my_procedure\
-        .write(0x19, bytearray([168]))\
-        .read(0x19, 6)\
+        .write(0x20, bytearray([168]))\
+        .read(0x20, 6)\
         .doWait(1000)
 
   # Execute the mock function

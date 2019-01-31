@@ -9,9 +9,11 @@ def init_slave():
   my_procedure = slave_testboard.createProcedure('I2C-Slave')\
       .setSpeed(100000)\
       .begin(0x19)\
-      .write(bytearray([10] * 18), timeout=50000)
+      .write(bytearray([10] * 6))\
+      .write(bytearray([11] * 6))\
+      .write(bytearray([12] * 6))
   
-  exit_code = my_procedure.run()
+  exit_code = my_procedure.run(timeout=50000)
   print("Slave ended with %d\n" % (exit_code,))
 
 def z_axis_check():

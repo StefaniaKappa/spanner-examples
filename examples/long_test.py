@@ -7,7 +7,7 @@ import random
 
 for i in range(1, 10):
   print('----' + ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(i*1000)) + '----', flush=True)
-  time.sleep(1)
+  time.sleep(100)
 
 print("success")
 print("successfully")

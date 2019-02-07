@@ -54,14 +54,14 @@ build_binary:
 #         ota_method: particle
 #         binary: https://drive.google.com/open?id=1pqwckXPclrgKaeJy3-7hWkkfVH2b-61l
 
-testing:
-    pre_flight: echo "Test"
-    script: 'examples/long_test.py'
-#     device_update:
-#         ota_method: 'spanner shipper'
-#         env: 'production'
-#         repo: 'current'
-    post_flight: echo "done"
+# testing:
+#     pre_flight: echo "Test"
+#     script: 'examples/long_test.py'
+# #     device_update:
+# #         ota_method: 'spanner shipper'
+# #         env: 'production'
+# #         repo: 'current'
+#     post_flight: echo "done"
     
 # build_binary:
 #     builder: 'particle photon'

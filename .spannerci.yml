@@ -35,7 +35,7 @@
 build_binary:
     builder: 'platformio'
     binary_name: './target/app.bin'
-    script: platformio ci -b esp32dev -O "DCOMPONENT_EMBED_TXTFILES=src/private.pem.key:src/certificate.pem.crt:src/aws-root-ca.pem" -O "DCONFIG_WIFI_SSID=\"ESP_AP\"" -O "DCONFIG_WIFI_PASSWORD=\"MYPASS\"" SPN_PROJECT_DIR/aws_platformio
+    script: platformio ci -b esp32dev -O "DCOMPONENT_EMBED_TXTFILES=src/private.pem.key:src/certificate.pem.crt:src/aws-root-ca.pem" -O "DCONFIG_WIFI_SSID=\"ESP_AP\"" -O "DCONFIG_WIFI_PASSWORD=\"MYPASS\"" $SPN_PROJECT_DIR/aws_platformio
     
 # build_binary:
 #     builder: 'aws esp32'

@@ -20,18 +20,23 @@
 # post_flight: 
 #     - echo "Post flight command"
 
+# build_binary:
+# #     env_vars:
+# #        - $DEVICE_1
+#     pre_flight: 
+#        - echo "hello there"
+#        - cd ../ && echo $PWD
+#     builder: 'particle photon'
+#     binary_name: 'app/target/app.bin'
+#     script: echo 'hello there' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
+#     post_flight: 
+#        - echo "finito la musica"
+
 build_binary:
-#     env_vars:
-#        - $DEVICE_1
-    pre_flight: 
-       - echo "hello there"
-       - cd ../ && echo $PWD
-    builder: 'particle photon'
-    binary_name: 'app/target/app.bin'
-    script: echo 'hello there' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
-    post_flight: 
-       - echo "finito la musica"
-       
+    builder: 'platformio'
+    binary_name: './target/app.bin'
+    script: platformio ci -b esp32dev -O "DCOMPONENT_EMBED_TXTFILES=src/private.pem.key:src/certificate.pem.crt:src/aws-root-ca.pem" -O "DCONFIG_WIFI_SSID=\"ESP_AP\"" -O "DCONFIG_WIFI_PASSWORD=\"MYPASS\"" SPN_PROJECT_DIR/aws_platformio
+    
 # build_binary:
 #     builder: 'aws esp32'
 #     #pre_flight:

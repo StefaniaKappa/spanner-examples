@@ -34,8 +34,9 @@
 
 build_binary:
     builder: 'platformio'
-    binary_name: '/tmp/build/.pioenvs/esp32dev/firmware.elf'
+    pre_flight:  mkdir "/tmp/build" 
     script: platformio ci --project-conf="platformio.ini" --build-dir="/tmp/build" --keep-build-dir aws_platformio
+    binary_name: '/tmp/build/.pioenvs/esp32dev/firmware.elf'
     
 # build_binary:
 #     builder: 'aws esp32'

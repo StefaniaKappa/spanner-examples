@@ -35,7 +35,7 @@
 build_binary:
     builder: 'platformio'
     binary_name: './target/app.bin'
-    script: platformio ci --project-conf="$SPN_PROJECT_DIR/platformio.ini" $SPN_PROJECT_DIR/aws_platformio
+    script: platformio ci --project-conf="platformio.ini" aws_platformio
     
 # build_binary:
 #     builder: 'aws esp32'

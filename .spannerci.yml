@@ -20,26 +20,26 @@
 # post_flight: 
 #     - echo "Post flight command"
 
-# build_binary:
-# #     env_vars:
-# #        - $DEVICE_1
-#     pre_flight: 
-#        - echo "hello there"
-#        - cd ../ && echo $PWD
-#     builder: 'particle photon'
-#     binary_name: 'app/target/app.bin'
-#     script: echo 'hello there' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
-#     post_flight: 
-#        - echo "finito la musica"
+build_binary:
+#     env_vars:
+#        - $DEVICE_1
+    pre_flight: 
+       - echo "hello there"
+       - cd ../ && echo $PWD
+    builder: 'particle photon'
+    binary_name: 'app/target/app.bin'
+    script: echo 'hello there' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
+    post_flight: 
+       - echo "finito la musica"
 
 testing:
    script: examples/long_test.py
 
-build_binary:
-    builder: 'platformio'
-    pre_flight:  mkdir "/tmp/build" 
-    script: platformio ci --project-conf="platformio.ini" --build-dir="/tmp/build" --keep-build-dir aws_platformio
-    binary_name: '/tmp/build/.pioenvs/esp32dev/firmware.elf'
+# build_binary:
+#     builder: 'platformio'
+#     pre_flight:  mkdir "/tmp/build" 
+#     script: platformio ci --project-conf="platformio.ini" --build-dir="/tmp/build" --keep-build-dir aws_platformio
+#     binary_name: '/tmp/build/.pioenvs/esp32dev/firmware.elf'
     
 # build_binary:
 #     builder: 'aws esp32'

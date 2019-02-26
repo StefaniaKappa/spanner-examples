@@ -32,8 +32,8 @@ build_binary:
     post_flight: 
        - echo "finito la musica"
 
-testing:
-   script: examples/long_test.py
+# testing:
+#    script: examples/long_test.py
 
 # build_binary:
 #     builder: 'platformio'

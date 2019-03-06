@@ -17,7 +17,7 @@
 # print("success done")
 
 import Spanner
-from Time import sleep 
+from time import sleep 
 
 def validate_dummy_test_case():
     Spanner.assertTrue(1);

@@ -17,9 +17,11 @@
 # print("success done")
 
 import Spanner
+from Time import sleep 
 
 def validate_dummy_test_case():
     Spanner.assertTrue(1);
 
 if __name__ == "__main__":
+    sleep(20);
     validate_dummy_test_case()

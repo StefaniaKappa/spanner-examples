@@ -9,9 +9,17 @@ import random
 #   print('----' + ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(i*1000)) + '----', flush=True)
 #   time.sleep(100)
 
-print("success")
-print("successfully")
-print("Failure")
-print("This is success!")
-print("This is successfully")
-print("success done")
+# print("success")
+# print("successfully")
+# print("Failure")
+# print("This is success!")
+# print("This is successfully")
+# print("success done")
+
+import Spanner
+
+def validate_dummy_test_case():
+    Spanner.assertTrue(1);
+
+if __name__ == "__main__":
+validate_dummy_test_case()

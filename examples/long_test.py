@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import time
-import string
-import random
+# import time
+# import string
+# import random
 
 # for i in range(1, 10):
 #   print('----' + ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(i*1000)) + '----', flush=True)
@@ -22,4 +22,4 @@ def validate_dummy_test_case():
     Spanner.assertTrue(1);
 
 if __name__ == "__main__":
-validate_dummy_test_case()
+    validate_dummy_test_case()

@@ -10,6 +10,7 @@ build_binary:
     script: echo 'hello there' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
     post_flight: 
        - echo "finito la musica"
+       - sleep 20; 
 
 testing:
    script: examples/long_test.py

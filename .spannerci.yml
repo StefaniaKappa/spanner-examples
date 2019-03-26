@@ -5,7 +5,7 @@ build_binary:
     pre_flight: 
        - echo "hello there"
        - cd ../ && echo $PWD
-    builder: 'particle photon'
+    builder: 'particle'
     binary_name: 'app/target/app.bin'
     script: echo 'hello there' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
     post_flight: 

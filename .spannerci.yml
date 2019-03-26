@@ -12,5 +12,5 @@ build_binary:
        - echo "finito la musica"
        - sleep 20; 
 
-testing:
-   script: examples/long_test.py
+# testing:
+#    script: examples/long_test.py

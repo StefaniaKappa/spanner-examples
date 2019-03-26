@@ -7,10 +7,9 @@ build_binary:
        - cd ../ && echo $PWD
     builder: 'particle'
     binary_name: 'app/target/app.bin'
-    script: echo 'hello there' && cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
+    script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
     post_flight: 
        - echo "finito la musica"
-       - sleep 20; 
-
+       
 # testing:
 #    script: examples/long_test.py

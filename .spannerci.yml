@@ -8,8 +8,8 @@ build_binary:
     builder: 'particle'
     binary_name: 'app/target/app.bin'
     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
-    post_flight: 
-       - echo "finito la musica"
+#     post_flight: 
+#        - echo "finito la musica"
        
 # testing:
 #    script: examples/long_test.py

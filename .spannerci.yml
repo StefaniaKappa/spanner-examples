@@ -3,7 +3,7 @@ build_binary:
 #     env_vars:
 #        - $DEVICE_1
     pre_flight: 
-       - echo "hello there"
+#        - echo "hello there"
        - cd ../ && echo $PWD
     builder: 'particle'
     binary_name: 'app/target/app.bin'

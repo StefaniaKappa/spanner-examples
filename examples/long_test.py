@@ -25,3 +25,4 @@ def validate_dummy_test_case():
 if __name__ == "__main__":
     
     validate_dummy_test_case()
+    print("Failure")

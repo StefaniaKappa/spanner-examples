@@ -16,12 +16,17 @@
 # print("This is successfully")
 # print("success done")
 
-import Spanner
-from time import sleep 
+# import Spanner
+# from time import sleep 
 
-def validate_dummy_test_case():
-    Spanner.assertTrue(1);
+# def validate_dummy_test_case():
+#     Spanner.assertTrue(1);
 
 if __name__ == "__main__":
-    
-    validate_dummy_test_case()
+    print("success")
+    print("successfully")
+    print("-------------------------------")
+    print("This is success!")
+    print("This is successfully")
+    print("success done")
+    # validate_dummy_test_case()

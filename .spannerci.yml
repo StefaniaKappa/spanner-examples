@@ -1,5 +1,5 @@
 
-build_binary:
+# build_binary:
 #     env_vars:
 #        - $DEVICE_1
 #     pre_flight: 

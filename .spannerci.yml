@@ -1,15 +1,13 @@
 
-# build_binary:
-#     env_vars:
-#        - $DEVICE_1
-#     pre_flight: 
-#        - echo "hello there"
-#        - cd ../ && echo $PWD
-#     builder: 'particle'
-#     binary_name: 'app/target/app.bin'
-#     script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/app
-#     post_flight: 
-#        - echo "finito la musica"
+build_binary:
+    pre_flight: 
+       - echo "hello there"
+       - cd ../ && echo $PWD
+    builder: 'particle'
+    binary_name: 'app/target/app.bin'
+    script: cd $SPN_BUILDER_SDK 
+    post_flight: 
+       - echo "finito la musica"
        
-testing:
-   script: 'examples/long_test.py'
+# testing:
+#    script: 'examples/long_test.py'

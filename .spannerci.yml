@@ -11,5 +11,16 @@
 #     post_flight: 
 #        - echo "finito la musica"
        
+build_binary:
+    builder: 'particle'
+    binary_name: 'binary/mike_binary.bin'
+    script: cd $SPN_BUILDER_SDK && make PLATFORM=photon APPDIR=$SPN_PROJECT_DIR/firmware/particle
+
 testing:
-   script: 'examples/long_test.py'
+    script: 'pytest -s --verbose testing/basic-tests/GPIO/read-digital-output/scenario.py'
+    device_update:
+        ota_method: 'particle'
+        devices:
+            - $DEVID_1
+        access_token: $PARTICLE_TOKEN
+        binary: auto
